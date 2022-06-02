@@ -1,0 +1,87 @@
+{
+    "projectType": "application",
+    "sourceRoot": "apps/techno-base/src",
+    "prefix": "my-team",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/techno-base",
+                "index": "apps/techno-base/src/index.html",
+                "main": "apps/techno-base/src/main.ts",
+                "polyfills": "apps/techno-base/src/polyfills.ts",
+                "tsConfig": "apps/techno-base/tsconfig.app.json",
+                "inlineStyleLanguage": "scss",
+                "assets": ["apps/techno-base/src/favicon.ico", "apps/techno-base/src/assets"],
+                "styles": ["apps/techno-base/src/styles.scss"],
+                "scripts": []
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "500kb",
+                            "maximumError": "1mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "2kb",
+                            "maximumError": "4kb"
+                        }
+                    ],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/techno-base/src/environments/environment.ts",
+                            "with": "apps/techno-base/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "browserTarget": "techno-base:build:production"
+                },
+                "development": {
+                    "browserTarget": "techno-base:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "techno-base:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/techno-base/**/*.ts", "apps/techno-base/**/*.html"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/techno-base"],
+            "options": {
+                "jestConfig": "apps/techno-base/jest.config.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}
