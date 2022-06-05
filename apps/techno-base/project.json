@@ -14,7 +14,7 @@
                 "tsConfig": "apps/techno-base/tsconfig.app.json",
                 "inlineStyleLanguage": "scss",
                 "assets": ["apps/techno-base/src/favicon.ico", "apps/techno-base/src/assets"],
-                "styles": ["apps/techno-base/src/styles.scss"],
+                "styles": ["node_modules/bootstrap/scss/bootstrap.scss","apps/techno-base/src/styles.scss"],
                 "scripts": []
             },
             "configurations": {
