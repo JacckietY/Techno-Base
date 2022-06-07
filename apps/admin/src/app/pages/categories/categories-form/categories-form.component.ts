@@ -56,6 +56,10 @@ export class CategoriesFormComponent implements OnInit {
     }
   };
 
+  onGoBack() {
+    this.location.back();
+  }
+
   private _addCategory(category : Category) {
     this.categoriesService.createCategory(category).subscribe
     ((category: Category) => {

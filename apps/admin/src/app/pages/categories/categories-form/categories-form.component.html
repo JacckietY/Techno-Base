@@ -2,8 +2,8 @@
 <div class="admin-page">
     <p-card [header]="editmode ? 'Edit Category' : 'Add Category'" 
             subheader="You can add or edit categories here">
-        <div class="p-grid my-5">
-            <div class="p-col-12">
+        <div class="grid my-5">
+            <div class="col-12">
                 <p-toolbar>
                     <div class="p-toolbar-group-left"></div>
                     <div class="p-toolbar-group-right">
@@ -18,14 +18,15 @@
                         styleClass="p-button-danger mx-2" 
                         label="Cancel" 
                         icon="pi pi-arrow-circle-left"
+                        (click)="onGoBack()"
                         >
                         </p-button>
                     </div>
                 </p-toolbar>
             </div>
         </div>
-        <div class="p-grid">
-            <div class="p-col-12">
+        <div class="grid">
+            <div class="col-12">
                 <form [formGroup]="form">
                     <div class="fluid formgrid grid">
                         <div class="field col">
@@ -46,7 +47,7 @@
                             <small *ngIf="categoryForm.icon.invalid && isSubmitted" 
                                     class="p-error">Icon is required!</small>
                         </div>
-                        <div class="p-field p-col">
+                        <div class="field p-col">
                             <label for="color">Color</label><br>
                             <p-colorPicker formControlName="color"></p-colorPicker>
                         </div>
