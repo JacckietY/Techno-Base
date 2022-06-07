@@ -27,22 +27,28 @@
         <div class="p-grid">
             <div class="p-col-12">
                 <form [formGroup]="form">
-                    <div class="formgrid grid">
+                    <div class="fluid formgrid grid">
                         <div class="field col">
-                            <label for="name">Name</label>
+                            <label for="name">Name</label><br>
                             <input id="name" type="text"
                                 formControlName="name" 
-                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-9"
                                 pInputText/>
-                            <small *ngIf="categoryForm.name.invalid && isSubmitted" class="p-error">Name is required!</small>
+                            <small *ngIf="categoryForm.name.invalid && isSubmitted" 
+                                    class="p-error">Name is required!</small>
                         </div>
                         <div class="field col">
-                            <label for="icon">Icon</label>
+                            <label for="icon">Icon</label><br>
                             <input id="icon" type="text"
                                 formControlName="icon" 
-                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-9"
                                 pInputText/>
-                            <small *ngIf="categoryForm.icon.invalid && isSubmitted" class="p-error">Icon is required!</small>
+                            <small *ngIf="categoryForm.icon.invalid && isSubmitted" 
+                                    class="p-error">Icon is required!</small>
+                        </div>
+                        <div class="p-field p-col">
+                            <label for="color">Color</label><br>
+                            <p-colorPicker formControlName="color"></p-colorPicker>
                         </div>
                     </div>
                 </form>
