@@ -8,9 +8,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ProductsModule } from './../../../../libs/products/src/lib/products.module';
 
 import { UiModule } from '@my-team/ui';
 import {AccordionModule} from 'primeng/accordion';
+import { NavComponent } from './shared/nav/nav.component';
 
 const routes: Routes = [
     {
@@ -29,12 +31,13 @@ const routes: Routes = [
         HomePageComponent, 
         ProductListComponent, 
         HeaderComponent, 
-        FooterComponent
+        FooterComponent, NavComponent
     ],
     imports: [
         BrowserModule, 
         BrowserAnimationsModule,
         RouterModule.forRoot(routes), 
+        ProductsModule,
         UiModule,
         AccordionModule
     ],
