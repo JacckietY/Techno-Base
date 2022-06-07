@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CategoriesService, Category } from '@my-team/products';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -16,7 +17,8 @@ export class CategoriesListComponent implements OnInit {
   constructor(
     private categoriesService: CategoriesService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,7 @@ export class CategoriesListComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.categoriesService.deleteCategory(categoryId).subscribe
-        (response => {
+        ((response) => {
           this._getCategories();
           this.messageService.add({
             severity:'success', 
@@ -53,10 +55,14 @@ export class CategoriesListComponent implements OnInit {
     
   }
 
+  updateCategory(categoryid: string) {
+    this.router.navigateByUrl(`categories/form/${categoryid}`)
+  }
+
 
 
   private _getCategories() {
-    this.categoriesService.getCategories().subscribe(cats => {
+    this.categoriesService.getCategories().subscribe((cats) => {
       this.categories = cats;
     });
   };

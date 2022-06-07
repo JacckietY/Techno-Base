@@ -1,6 +1,7 @@
 <p-toast></p-toast>
 <div class="admin-page">
-    <p-card header="Add Category" subheader="You can add or edit categories here">
+    <p-card [header]="editmode ? 'Edit Category' : 'Add Category'" 
+            subheader="You can add or edit categories here">
         <div class="p-grid my-5">
             <div class="p-col-12">
                 <p-toolbar>
@@ -8,8 +9,8 @@
                     <div class="p-toolbar-group-right">
                         <p-button
                         styleClass="p-button-success" 
-                        label="Create" 
-                        icon="pi pi-plus"
+                        [label]="editmode ? 'Update' : 'Create'" 
+                        [icon]="editmode ? 'pi pi-pencil' : 'pi pi-plus'"
                         (click)="onSubmit()"
                         >
                         </p-button>
