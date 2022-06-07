@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CategoriesService, Category } from '@my-team/products';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'admin-categories-list',
@@ -12,12 +13,51 @@ export class CategoriesListComponent implements OnInit {
 
   categories: Category[] = [];
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(
+    private categoriesService: CategoriesService,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) { }
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe(cats => {
-      this.categories = cats;
-    })
+    this._getCategories();
   }
 
+  deleteCategory(categoryId: string) {
+    this.confirmationService.confirm({
+      message: 'Do you want to Delete this Category?',
+      header: 'Delete Category',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.categoriesService.deleteCategory(categoryId).subscribe
+        (response => {
+          this._getCategories();
+          this.messageService.add({
+            severity:'success', 
+            summary:'Success', 
+            detail:'Category is deleted!'
+          });
+        },
+
+        (error) => {
+          this.messageService.add({
+            severity:'error', 
+            summary:'Error', 
+            detail:'Category is not deleted!'
+          });
+        });
+      },
+      reject: () => {}
+    });
+
+    
+  }
+
+
+
+  private _getCategories() {
+    this.categoriesService.getCategories().subscribe(cats => {
+      this.categories = cats;
+    });
+  };
 }

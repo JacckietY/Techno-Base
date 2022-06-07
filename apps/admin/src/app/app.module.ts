@@ -19,7 +19,8 @@ import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
 import {ToastModule} from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 
@@ -30,7 +31,8 @@ const UX_MODULE = [
     ButtonModule,
     TableModule,
     InputTextModule,
-    ToastModule
+    ToastModule,
+    ConfirmDialogModule
 ]
 
 const routes : Routes = [
@@ -71,7 +73,7 @@ const routes : Routes = [
         RouterModule.forRoot(routes, { initialNavigation: 'enabled' }), 
         ...UX_MODULE
     ],
-    providers: [CategoriesService, MessageService],
+    providers: [CategoriesService, MessageService, ConfirmationService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
