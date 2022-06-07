@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoriesService } from '@my-team/products';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +14,8 @@ import {CardModule} from 'primeng/card';
 import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
+
 
 const UX_MODULE = [
     CardModule,
@@ -33,6 +37,10 @@ const routes : Routes = [
                 path: 'categories',
                 component: CategoriesListComponent,
             },
+            {
+                path: 'categories/form',
+                component: CategoriesFormComponent,
+            },
         ]
     }
 ];
@@ -43,12 +51,15 @@ const routes : Routes = [
         DashboardComponent, 
         ShellComponent, 
         SidebarComponent, 
-        CategoriesListComponent],
+        CategoriesListComponent, CategoriesFormComponent
+    ],
     imports: [
-        BrowserModule, 
+        BrowserModule,
+        HttpClientModule, 
         RouterModule.forRoot(routes, { initialNavigation: 'enabled' }), 
-        ...UX_MODULE],
-    providers: [],
+        ...UX_MODULE
+    ],
+    providers: [CategoriesService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
