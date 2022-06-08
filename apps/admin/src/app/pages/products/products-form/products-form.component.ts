@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CategoriesService } from '@my-team/products';
 
 @Component({
     selector: 'admin-products-form',
@@ -11,10 +12,12 @@ export class ProductsFormComponent implements OnInit {
     editmode = false;
     isSubmitted = false;
     form: FormGroup;
-    constructor(private formBuilder: FormBuilder, private location: Location) {}
+    categories: any = [];
+    constructor(private formBuilder: FormBuilder, private location: Location, private categoriesService: CategoriesService) {}
 
     ngOnInit(): void {
         this._initForm();
+        this._getCategories();
     }
 
     onSubmit() {}
@@ -30,6 +33,12 @@ export class ProductsFormComponent implements OnInit {
             richDescription: [''],
             image: [''],
             isFeatured: ['']
+        });
+    }
+
+    private _getCategories() {
+        this.categoriesService.getCategories().subscribe((categories) => {
+            this.categories = categories;
         });
     }
 

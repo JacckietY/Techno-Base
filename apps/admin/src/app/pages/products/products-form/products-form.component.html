@@ -59,7 +59,16 @@
                         </div>
                         <div class="col-4">
                             <label for="category">Category</label><br />
-                            <!-- DROPDOWN -->
+                            <p-dropdown
+                                [options]="categories"
+                                [filter]="true"
+                                filterBy="name"
+                                [showClear]="true"
+                                placeholder="Select a Category"
+                                formControlName="category"
+                                optionLabel="name"
+                                [style]="{ width: '100%' }"
+                            ></p-dropdown>
                             <small *ngIf="productForm.category.invalid && isSubmitted" class="p-error">Category is required!</small>
                         </div>
                         <div class="col-4">

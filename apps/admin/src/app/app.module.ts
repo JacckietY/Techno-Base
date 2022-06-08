@@ -27,6 +27,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { DropdownModule } from 'primeng/dropdown';
 
 const UX_MODULE = [
     CardModule,
@@ -39,7 +40,8 @@ const UX_MODULE = [
     ColorPickerModule,
     InputNumberModule,
     InputTextareaModule,
-    InputSwitchModule
+    InputSwitchModule,
+    DropdownModule
 ];
 
 const routes: Routes = [
