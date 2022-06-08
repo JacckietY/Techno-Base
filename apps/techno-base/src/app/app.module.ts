@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -11,8 +11,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ProductsModule } from './../../../../libs/products/src/lib/products.module';
 
 import { UiModule } from './../../../../libs/ui/src/lib/ui.module';
-import {AccordionModule} from 'primeng/accordion';
+import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
     {
@@ -26,21 +27,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [
-        AppComponent, 
-        HomePageComponent, 
-        ProductListComponent, 
-        HeaderComponent, 
-        FooterComponent, NavComponent
-    ],
-    imports: [
-        BrowserModule, 
-        BrowserAnimationsModule,
-        RouterModule.forRoot(routes), 
-        ProductsModule,
-        AccordionModule,
-        UiModule,
-    ],
+    declarations: [AppComponent, HomePageComponent, ProductListComponent, HeaderComponent, FooterComponent, NavComponent],
+    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, UiModule],
     providers: [],
     bootstrap: [AppComponent]
 })
