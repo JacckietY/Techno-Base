@@ -1,0 +1,36 @@
+.banner {
+    height: 280px;
+    width: 100%;
+    background-color: #9DC2FF;
+    border-radius: 15px;
+
+    &-text {
+        color: white;
+        margin-top: 70px;
+
+        h2 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 400;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 300;
+        }
+    }
+
+    &-image {
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    &-button {
+        background-color: white;
+        color: $primary-color;
+        border: 0;
+        border-radius: 13px;
+        width: 150px;
+    }
+}

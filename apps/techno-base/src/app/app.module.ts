@@ -10,7 +10,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ProductsModule } from './../../../../libs/products/src/lib/products.module';
 
-import { UiModule } from '@my-team/ui';
+import { UiModule } from './../../../../libs/ui/src/lib/ui.module';
 import {AccordionModule} from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
 
@@ -38,8 +38,8 @@ const routes: Routes = [
         BrowserAnimationsModule,
         RouterModule.forRoot(routes), 
         ProductsModule,
+        AccordionModule,
         UiModule,
-        AccordionModule
     ],
     providers: [],
     bootstrap: [AppComponent]

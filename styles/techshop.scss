@@ -10,6 +10,7 @@
 @import '~primeng/resources/themes/saga-blue/theme.css';
 @import '~primeng/resources/primeng.min.css';
 @import '~primeflex/primeflex.css';
+@import '~animate.css/animate.css';
 
 @import './base/config.scss';
 
@@ -24,6 +25,7 @@
 
 //LIBS
 @import './libs/products/products.scss';
+@import './libs/ui/ui.scss';
 
 .container{
     width: 1200px;
