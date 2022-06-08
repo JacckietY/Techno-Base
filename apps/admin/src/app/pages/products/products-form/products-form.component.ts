@@ -12,10 +12,11 @@ import { timer } from 'rxjs';
 })
 export class ProductsFormComponent implements OnInit {
     editmode = false;
-    isSubmitted = false;
     form: FormGroup;
+    isSubmitted = false;
     categories: any = [];
     imageDisplay: string | ArrayBuffer;
+    currentProductId: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -52,7 +53,7 @@ export class ProductsFormComponent implements OnInit {
             countInStock: ['', Validators.required],
             description: ['', Validators.required],
             richDescription: [''],
-            image: ['', Validators.required],
+            image: [''],
             isFeatured: [false]
         });
     }
@@ -95,10 +96,10 @@ export class ProductsFormComponent implements OnInit {
         const file = event.target.files[0];
         if (file) {
             this.form.patchValue({ image: file });
-            this.form.get('image')?.updateValueAndValidity();
+            this.form.get('image')!.updateValueAndValidity();
             const fileReader = new FileReader();
             fileReader.onload = () => {
-                this.imageDisplay = fileReader.result as string;
+                this.imageDisplay = fileReader.result!;
             };
             fileReader.readAsDataURL(file);
         }
