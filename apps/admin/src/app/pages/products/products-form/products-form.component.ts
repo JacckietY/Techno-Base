@@ -96,10 +96,10 @@ export class ProductsFormComponent implements OnInit {
         const file = event.target.files[0];
         if (file) {
             this.form.patchValue({ image: file });
-            this.form.get('image')!.updateValueAndValidity();
+            this.form.get('image')?.updateValueAndValidity();
             const fileReader = new FileReader();
             fileReader.onload = () => {
-                this.imageDisplay = fileReader.result!;
+                this.imageDisplay = fileReader.result as string;
             };
             fileReader.readAsDataURL(file);
         }
