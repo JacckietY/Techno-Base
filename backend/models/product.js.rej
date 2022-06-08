@@ -1,0 +1,13 @@
+diff a/backend/models/product.js b/backend/models/product.js	(rejected hunks)
+@@ -39,7 +39,11 @@
+          type: Number,
+          required: true,
+          min: 0,
+++<<<<<<< HEAD
+ +        max: 1000
+++=======
++         max: 1024
+++>>>>>>> ce07487 (small fix)
+      },
+      rating: {
+          type: Number,

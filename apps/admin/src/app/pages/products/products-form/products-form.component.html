@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-12 my-3">
                             <label for="description">Description</label><br />
-                            <textarea pInputTextarea [rows]="7" [cols]="270" formControlName="description"></textarea>
+                            <textarea pInputTextarea [rows]="7" style="width: 100%" formControlName="description"></textarea>
                             <small *ngIf="productForm.description.invalid && isSubmitted" class="p-error">Description is required!</small>
                         </div>
                         <div class="col-12">
