@@ -13,6 +13,7 @@ export class ProductsFormComponent implements OnInit {
     isSubmitted = false;
     form: FormGroup;
     categories: any = [];
+    imageDisplay: string | ArrayBuffer;
     constructor(private formBuilder: FormBuilder, private location: Location, private categoriesService: CategoriesService) {}
 
     ngOnInit(): void {
@@ -44,6 +45,17 @@ export class ProductsFormComponent implements OnInit {
 
     onGoBack() {
         this.location.back();
+    }
+
+    onImageUpload(event: any) {
+        const file = event.target.files[0];
+        if (file) {
+            const fileReader = new FileReader();
+            fileReader.onload = () => {
+                this.imageDisplay = fileReader.result as string;
+            };
+            fileReader.readAsDataURL(file);
+        }
     }
 
     get productForm() {
