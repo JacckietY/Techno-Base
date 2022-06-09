@@ -1,0 +1,60 @@
+h5 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+.product {
+    &-name {
+        font-size: 2em;
+    }
+
+    &-desc {
+        font-size: 1.4em;
+    }
+
+    &-rating {
+        margin: 15px 0;
+    }
+
+    &-price {
+        font-size: 1.5em;
+        font-weight: 600;
+        border-bottom: 1px solid var(--surface-300);
+        padding: 25px 0;
+
+        .price-before {
+            font-size: 0.9em;
+            margin-left: 10px;
+            font-weight: 200;
+            color: $secondary-color;
+            text-decoration: line-through;
+        }
+    }
+
+    &-quantity {
+        flex-direction: row;
+        margin-top: 25px;
+        margin-right: 300px;
+        label {
+            font-size: 1.2em;
+        }
+
+        .p-button {
+            background-color: $primary-color;
+            border: 0;
+        }
+    }
+
+    &-action {
+        .p-button {
+            background-color: $primary-color;
+            border: 0;
+            margin-right: 15px;
+        }
+    }
+}
+
+.product-rich-desc {
+    line-height: 1.6em;
+}
