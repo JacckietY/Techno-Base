@@ -16,7 +16,7 @@ export class UsersFormComponent implements OnInit {
     isSubmitted = false;
     editmode = false;
     currentUserId: string;
-    countries = [];
+    countries: any = [];
 
     constructor(
         private messageService: MessageService,
@@ -104,7 +104,7 @@ export class UsersFormComponent implements OnInit {
             if (params.id) {
                 this.editmode = true;
                 this.currentUserId = params.id;
-                this.usersService.getUser(params.id).subscribe((user) => {
+                this.usersService.getUser(params.id).subscribe((user: any) => {
                     this.userForm.name.setValue(user.name);
                     this.userForm.email.setValue(user.email);
                     this.userForm.phone.setValue(user.phone);
