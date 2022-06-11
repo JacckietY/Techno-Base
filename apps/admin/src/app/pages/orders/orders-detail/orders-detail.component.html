@@ -1,4 +1,4 @@
-<!-- <p-toast></p-toast>
+<p-toast></p-toast>
 <div class="admin-page" *ngIf="order">
     <p-card [header]="'View Order'" subheader="You can edit order status here">
         <p-fieldset legend="Order Details" styleClass="mb-4" [toggleable]="true">
@@ -62,7 +62,7 @@
 
                 <div class="col-4">
                     <h5>Customer Info</h5>
-                    <p>{{ order.user.name }}</p>
+                    <p>{{ order.user?.name }}</p>
                 </div>
 
                 <div class="col-4">
@@ -72,4 +72,4 @@
             </div>
         </p-fieldset>
     </p-card>
-</div> -->
+</div>

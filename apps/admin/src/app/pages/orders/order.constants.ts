@@ -1,4 +1,4 @@
-export const ORDER_STATUS: { [key: number]: object } = {
+export const ORDER_STATUS = {
     0: {
         label: 'Pending',
         color: 'primary'
@@ -20,3 +20,18 @@ export const ORDER_STATUS: { [key: number]: object } = {
         color: 'danger'
     }
 };
+
+// enum OrderStatus {
+//     PENDING,
+//     PROCESSED,
+//     SHIPPED,
+//     DELIVERED,
+//     FAILED
+// }
+
+// interface StatusAppearence {
+//     color: string;
+//     label: string;
+// }
+
+// export const ORDER_STATUS: Record<OrderStatus, StatusAppearence>;
