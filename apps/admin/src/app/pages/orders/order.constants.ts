@@ -1,5 +1,5 @@
-export const ORDER_STATUS = {
-    0: {
+export const ORDER_STATUS: Record<any, any> = {
+    ['Pending']: {
         label: 'Pending',
         color: 'primary'
     },

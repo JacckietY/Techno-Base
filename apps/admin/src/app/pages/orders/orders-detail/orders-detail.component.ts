@@ -17,11 +17,11 @@ export class OrdersDetailComponent implements OnInit {
     constructor(private orderService: OrdersService, private messageService: MessageService, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        this._mapOrderStatus();
-        this._getOrder();
+        this.#mapOrderStatus();
+        this.#getOrder();
     }
 
-    private _mapOrderStatus() {
+    #mapOrderStatus() {
         this.orderStatuses = Object.keys(ORDER_STATUS).map((key) => {
             return {
                 id: key,
@@ -30,7 +30,7 @@ export class OrdersDetailComponent implements OnInit {
         });
     }
 
-    private _getOrder() {
+    #getOrder() {
         this.route.params.subscribe((params) => {
             if (params.id) {
                 this.orderService.getOrder(params.id).subscribe((order) => {

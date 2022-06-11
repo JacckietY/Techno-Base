@@ -1,4 +1,6 @@
-export class OrderItem {
-    product?: string;
-    quantity?: number;
+import { Product } from '@my-team/products';
+
+export interface OrderItem {
+    product: Product;
+    quantity: number;
 }
