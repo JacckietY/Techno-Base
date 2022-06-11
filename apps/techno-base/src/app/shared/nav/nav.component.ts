@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'techshop-nav',
-  templateUrl: './nav.component.html',
-  styles: [
-  ]
+    selector: 'techno-nav',
+    templateUrl: './nav.component.html',
+    styles: []
 })
 export class NavComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {}
 }

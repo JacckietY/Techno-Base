@@ -13,6 +13,7 @@ import { UiModule } from './../../../../libs/ui/src/lib/ui.module';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersModule } from '@my-team/orders';
 
 const routes: Routes = [
     {
@@ -23,7 +24,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, UiModule],
+    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, UiModule, OrdersModule],
     providers: [],
     bootstrap: [AppComponent]
 })

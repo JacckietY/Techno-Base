@@ -1,3 +1,3 @@
 export * from './lib/ui.module';
 
-export * from './lib/compomemts/banner/compomemts/banner.component';
+export * from './lib/components/banner/banner.component';

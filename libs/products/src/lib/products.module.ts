@@ -12,6 +12,7 @@ import { ProductsListComponent } from './pages/products-list/products-list.compo
 import { FormsModule } from '@angular/forms';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { UiModule } from '@my-team/ui';
 
 const routes: Routes = [
     {
@@ -29,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [CommonModule, RouterModule.forChild(routes), ButtonModule, CheckboxModule, RatingModule, FormsModule, InputNumberModule],
+    imports: [CommonModule, RouterModule.forChild(routes), ButtonModule, CheckboxModule, RatingModule, FormsModule, InputNumberModule, UiModule],
     declarations: [
         ProductsSearchComponent,
         CategoriesBannerComponent,
