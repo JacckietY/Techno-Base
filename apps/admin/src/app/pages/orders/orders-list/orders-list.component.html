@@ -19,8 +19,7 @@
                             <td>{{ order.totalPrice }}</td>
                             <td>{{ order.dateOrdered | date: 'short' }}</td>
                             <td>
-                                <!-- <p-tag [value]="orderStatus[order.status].label" [severity]="orderStatus[order.status].color"></p-tag> -->
-                                <p-tag value="value" severity="primary"></p-tag>
+                                <p-tag [value]="orderStatus[order.status].label" [severity]="orderStatus[order.status].color"></p-tag>
                             </td>
                             <td>
                                 <p-button styleClass="p-button-primary mr-2" icon="pi pi-eye" (click)="showOrder(order.id)"></p-button>
