@@ -14,4 +14,6 @@ export class CartService {
         const intialCartJson = JSON.stringify(intialCart);
         localStorage.setItem('cart', intialCartJson);
     }
+
+    setCartItem(cartItem: CartItem): Cart {}
 }
