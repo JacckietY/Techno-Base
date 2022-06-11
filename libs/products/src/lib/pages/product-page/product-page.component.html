@@ -12,7 +12,7 @@
                 <p-rating [(ngModel)]="product.rating" [disabled]="true" [cancel]="false"></p-rating>
             </div>
             <div class="product-price">
-                {{ product.price | currency }}
+                {{ product.price | currency: 'UAH':'symbol-narrow' }}
                 <span class="price-before"> {{ product.price! + 18 | currency }}; </span>
             </div>
 

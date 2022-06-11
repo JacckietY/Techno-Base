@@ -14,6 +14,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrdersModule } from '@my-team/orders';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
     {
@@ -24,7 +25,17 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, UiModule, OrdersModule],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot(routes),
+        HttpClientModule,
+        ProductsModule,
+        AccordionModule,
+        UiModule,
+        OrdersModule,
+        CommonModule
+    ],
     providers: [],
     bootstrap: [AppComponent]
 })
