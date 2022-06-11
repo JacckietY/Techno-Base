@@ -130,6 +130,7 @@ export class UsersFormComponent implements OnInit {
         const user: User = {
             id: this.currentUserId,
             name: this.userForm.name.value,
+            password: this.userForm.password.value,
             email: this.userForm.email.value,
             phone: this.userForm.phone.value,
             isAdmin: this.userForm.isAdmin.value,
