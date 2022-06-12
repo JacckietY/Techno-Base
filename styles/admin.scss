@@ -3,7 +3,7 @@
 @import './base/colors.scss';
 @import './base/fonts.scss';
 @import './base/mixins.scss';
-
+@import './base/config.scss';
 
 //Libraries
 @import '~primeicons/primeicons.css';
@@ -14,9 +14,9 @@
 
 //PAGES
 
-
 //SHARED
 @import './apps/admin/shell.scss';
 
 //LIBS
 @import './libs/ui/ui.scss';
+@import './libs/users/users.scss';

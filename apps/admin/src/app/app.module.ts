@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesService } from '@my-team/products';
+import { UsersModule } from '@my-team/users';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -135,6 +136,7 @@ const routes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
+        UsersModule,
         ...UX_MODULE
     ],
     providers: [CategoriesService, MessageService, ConfirmationService],

@@ -20,18 +20,3 @@ export const ORDER_STATUS: Record<any, any> = {
         color: 'danger'
     }
 };
-
-// enum OrderStatus {
-//     PENDING,
-//     PROCESSED,
-//     SHIPPED,
-//     DELIVERED,
-//     FAILED
-// }
-
-// interface StatusAppearence {
-//     color: string;
-//     label: string;
-// }
-
-// export const ORDER_STATUS: Record<OrderStatus, StatusAppearence>;
