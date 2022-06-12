@@ -1,0 +1,41 @@
+<div class="cart-page">
+    <div class="grid">
+        <div class="col-8">
+            <div>
+                <p-button label="Повернутися до каталогу" icon="pi pi-arrow-left" (onClick)="backToShop()"></p-button>
+            </div>
+            <div class="cart-prods">
+                <h5>Кошик: {{ 2 }} товар(и)</h5>
+            </div>
+            <div class="cart-shipping">Доставка займає від 1 до 3 робочих дня</div>
+            <div class="cart-item">
+                <div class="grid p-fluid">
+                    <div class="col-2 cart-item-image">
+                        <img src="https://www.boim.com.ua/wp-content/uploads/woocommerce-placeholder.png" alt="" />
+                    </div>
+                    <div class="col-7">
+                        <div class="cart-item-name">Товар</div>
+                        <div class="cart-item-price">
+                            {{ 250 | currency: 'UAH':'symbol-narrow' }}
+                        </div>
+                        <div class="card-item-remove">
+                            <p-button icon="pi pi-trash" (onClick)="deleteCartItem()"></p-button>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="product-quantity">
+                            <div class="field cart-item-quantity">
+                                <p-inputNumber mode="decimal" [showButtons]="true" inputId="quantity" [min]="1" [max]="100"> </p-inputNumber>
+                            </div>
+                            <div class="cart-item-subtotal">
+                                Subtotal:
+                                <span class="cart-item-subtotal-value">{{ 200 | currency }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">Сума замовлення</div>
+        </div>
+    </div>
+</div>
