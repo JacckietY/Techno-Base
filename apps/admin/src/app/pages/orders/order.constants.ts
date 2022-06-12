@@ -1,5 +1,5 @@
 export const ORDER_STATUS: Record<any, any> = {
-    ['Pending']: {
+    0: {
         label: 'Pending',
         color: 'primary'
     },

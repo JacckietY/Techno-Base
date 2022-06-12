@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesService } from '@my-team/products';
-import { UsersModule } from '@my-team/users';
+import { AuthGuard, UsersModule } from '@my-team/users';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -61,6 +61,7 @@ const routes: Routes = [
     {
         path: '',
         component: ShellComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'dashboard',
