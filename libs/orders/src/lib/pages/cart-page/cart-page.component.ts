@@ -18,8 +18,8 @@ export class CartPageComponent implements OnInit {
 
     private _getCartDetails() {
         this.cartService.cart$.pipe().subscribe((respCart) => {
-            respCart.items.forEach((cartItem) => {
-                this.productService.getProduct(cartItem.productId).subscribe((product) => {});
+            respCart.items!.forEach((cartItem) => {
+                this.productService.getProduct(cartItem.productId!).subscribe((product) => {});
             });
         });
     }
