@@ -26,6 +26,15 @@
             }
         }
 
+        .header {
+            display: flex;
+            justify-content: space-around;
+
+            h2 {
+                color: #fff;
+            }
+        }
+
         .links {
             ul {
                 margin: 0;
