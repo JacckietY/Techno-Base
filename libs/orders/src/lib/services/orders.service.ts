@@ -34,10 +34,10 @@ export class OrdersService {
     }
 
     getOrdersCount(): Observable<number> {
-        return this.http.get<number>(`${this.apiURLOrders}/get/count`).pipe(map((objectValue: any) => objectValue.orderCount));
+        return this.http.get<number>(`${this.apiURLOrders}/get/count`).pipe(map((objectValue: number | any) => objectValue.orderCount));
     }
 
     getTotalSales(): Observable<number> {
-        return this.http.get<number>(`${this.apiURLOrders}/get/totalsales`).pipe(map((objectValue: any) => objectValue.totalsales));
+        return this.http.get<number>(`${this.apiURLOrders}/get/totalsales`).pipe(map((objectValue: number | any) => objectValue.totalsales));
     }
 }

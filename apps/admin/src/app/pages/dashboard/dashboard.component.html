@@ -38,10 +38,10 @@
                 <p-card styleClass="d-totalsales">
                     <div class="d-item">
                         <div>
-                            <i class="pi pi-dollar"></i><br />
+                            <i class="pi pi-money-bill"></i><br />
                             <span class="name">TotalSales</span>
                         </div>
-                        <span class="number">{{ statistics[3] | currency }}</span>
+                        <span class="number">{{ statistics[3] | currency: 'UAH':'symbol-narrow' }}</span>
                     </div>
                 </p-card>
             </div>

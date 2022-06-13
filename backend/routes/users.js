@@ -131,7 +131,7 @@ router.delete('/:id', (req, res) => {
 });
 
 router.get(`/get/count`, async (req, res) => {
-    const userCount = await User.countDocuments((count) => count);
+    const userCount = await User.countDocuments();
 
     if (!userCount) {
         res.status(500).json({ success: false });

@@ -38,7 +38,7 @@ export class UsersService {
     }
 
     getUsersCount(): Observable<number> {
-        return this.http.get<number>(`${this.apiURLUsers}/get/count`).pipe(map((objectValue: any) => objectValue.userCount));
+        return this.http.get<number>(`${this.apiURLUsers}/get/count`).pipe(map((objectValue: number | any) => objectValue.userCount));
     }
 
     getCountries(): { id: string; name: string }[] {
