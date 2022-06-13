@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class OrdersService {
     apiURLOrders = environment.apiURL + 'orders';
+    apiURLProducts = environment.apiURL + 'products';
 
     constructor(private http: HttpClient) {}
 
@@ -39,5 +40,9 @@ export class OrdersService {
 
     getTotalSales(): Observable<number> {
         return this.http.get<number>(`${this.apiURLOrders}/get/totalsales`).pipe(map((objectValue: number | any) => objectValue.totalsales));
+    }
+
+    getProduct(productId: string): Observable<any> {
+        return this.http.get<any>(`${this.apiURLProducts}/${productId}`);
     }
 }

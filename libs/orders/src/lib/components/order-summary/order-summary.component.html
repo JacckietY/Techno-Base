@@ -1,0 +1,20 @@
+<div class="order-summary">
+    <h4>Ваше замовлення</h4>
+    <div class="summary-price">
+        <span>Вартість товарів</span>
+        <span>{{ totalPrice | currency: 'UAH':'symbol-narrow' }}</span>
+    </div>
+    <div class="summary-price">
+        <span>Доставка</span>
+        <span class="free">Безоплатно</span>
+    </div>
+    <div class="to-checkout">
+        <div class="summary-price">
+            <span>Готова вартість</span>
+            <span>{{ totalPrice | currency: 'UAH':'symbol-narrow' }}</span>
+        </div>
+        <div class="checkout-button" *ngIf="!isCheckout">
+            <p-button label="Сплатити" (onClick)="navigateToCheckout()"></p-button>
+        </div>
+    </div>
+</div>
