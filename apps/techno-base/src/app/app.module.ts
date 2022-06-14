@@ -12,9 +12,13 @@ import { ProductsModule } from './../../../../libs/products/src/lib/products.mod
 import { UiModule } from './../../../../libs/ui/src/lib/ui.module';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OrdersModule } from '@my-team/orders';
 import { CommonModule } from '@angular/common';
+import { JwtInterceptor, UsersModule } from '@my-team/users';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
     {
@@ -30,13 +34,16 @@ const routes: Routes = [
         BrowserAnimationsModule,
         RouterModule.forRoot(routes),
         HttpClientModule,
+        StoreModule.forRoot({}),
+        EffectsModule.forRoot([]),
         ProductsModule,
         AccordionModule,
         UiModule,
         OrdersModule,
-        CommonModule
+        CommonModule,
+        UsersModule
     ],
-    providers: [],
+    providers: [MessageService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

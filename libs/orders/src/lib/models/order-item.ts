@@ -1,6 +1,6 @@
 import { Product } from '@my-team/products';
 
 export interface OrderItem {
-    product: string;
+    product: any;
     quantity: number;
 }
