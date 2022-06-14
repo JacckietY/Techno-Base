@@ -3,6 +3,11 @@ export class Cart {
 }
 
 export class CartItem {
-    productId?: string;
+    productId: string;
+    quantity: number;
+}
+
+export default class CartItemDetailed {
+    product?: any;
     quantity?: number;
 }
