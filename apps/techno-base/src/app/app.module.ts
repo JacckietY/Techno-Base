@@ -22,7 +22,7 @@ import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'main',
         component: HomePageComponent
     }
 ];
