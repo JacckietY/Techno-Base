@@ -5,13 +5,13 @@ header {
         margin-top: 5px;
     }
     .tools {
-        padding-top: 15px;
+        padding-top: 10px;
 
         .pi {
             color: $primary-color;
         }
 
-        .pi:hover{
+        .pi:hover {
             color: #114290;
             transition: all 300ms ease;
         }
