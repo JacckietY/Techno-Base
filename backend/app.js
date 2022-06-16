@@ -7,10 +7,10 @@ require('dotenv').config({ path: 'backend/.env' });
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
 
+//Проміжні обробники
+
 app.use(cors());
 app.options('*', cors());
-
-//middleware
 
 app.use(express.json());
 app.use(morgan('tiny'));
@@ -18,7 +18,7 @@ app.use(authJwt());
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 app.use(errorHandler);
 
-//Routes
+//Маршрути
 
 const categoriesRoutes = require('./routes/categories');
 const productsRoutes = require('./routes/products');
@@ -32,7 +32,7 @@ app.use(`${api}/products`, productsRoutes);
 app.use(`${api}/users`, usersRoutes);
 app.use(`${api}/orders`, ordersRoutes);
 
-//Database
+//Зв'язок з базою даних
 
 mongoose
     .connect(process.env.CONNECTION_STRING, {
@@ -49,8 +49,8 @@ mongoose
     });
 const PORT = process.env.PORT || 3000;
 
-//Server
+//Сервер
 
 app.listen(PORT, () => {
-    console.log('server is running http://localhost:3000');
+    console.log('server is running http://localhost:' + PORT);
 });
