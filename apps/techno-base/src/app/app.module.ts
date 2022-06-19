@@ -24,6 +24,10 @@ const routes: Routes = [
     {
         path: 'main',
         component: HomePageComponent
+    },
+    {
+        path: '',
+        component: HomePageComponent
     }
 ];
 
