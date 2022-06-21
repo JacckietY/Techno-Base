@@ -1,8 +1,9 @@
 <div class="product-item" *ngIf="product">
-    <div class="product-item-wrapper">
-        <img [routerLink]="'/products/' + product.id" [src]="product.image" class="image" alt="" />
-        <h6 class="name">{{ product.name }}</h6>
-        <h6 class="price">{{ product.price | currency: 'UAH':'symbol-narrow' }}</h6>
-        <p-button styleClass="mt-3 add-to-cart" label="До кошика" icon="pi pi-shopping-cart" (onClick)="addProductToCart()"></p-button>
+    <div class="product-item-wrapper" id="wrapup">
+        <img [routerLink]="'/products/' + product.id" [src]="product.image" class="image" id="imga" alt="" />
+        <h6 class="name" id="na">{{ product.name }}</h6>
+        <h6 id="prc" class="price">{{ product.price | currency: 'UAH':'symbol-narrow' }}</h6>
+        <p-button styleClass="mt-3 add-to-cart" id="car" label="До кошика" icon="pi pi-shopping-cart" (onClick)="addProductToCart()"></p-button>
+        <p-button styleClass="mt-3 add-to-mob" id="mob" icon="pi pi-shopping-cart" (onClick)="addProductToCart()"></p-button>
     </div>
 </div>

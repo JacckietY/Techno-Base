@@ -1,4 +1,17 @@
 .categories-banner {
+    @media screen and (max-width: 400px) {
+        .category {
+            height: 20px;
+            &-name {
+                display: none;
+            }
+            &-icon {
+                .pi {
+                    margin-top: 1px;
+                }
+            }
+        }
+    }
     margin-top: 50px;
 
     h5 {

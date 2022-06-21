@@ -1,4 +1,22 @@
 .product-item {
+    @media screen and (max-width: 400px) {
+        #imga {
+            height: 50px;
+            margin-top: -35px;
+        }
+        #car {
+            display: none;
+        }
+        #mob {
+            display: contents;
+        }
+        #wrapup {
+            height: 200px;
+        }
+        #prc {
+            font-size: 1em;
+        }
+    }
     &-wrapper {
         border: 1px solid var(--surface-300);
         border-radius: 15px;
@@ -6,7 +24,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        min-height: 250px;
+        height: 250px;
         margin-top: 55px;
     }
 
@@ -30,6 +48,10 @@
         background-color: $primary-color;
         border: 0;
         border-radius: 15px;
+    }
+
+    .add-to-mob {
+        display: block;
     }
 }
 

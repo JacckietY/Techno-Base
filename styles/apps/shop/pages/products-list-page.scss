@@ -1,0 +1,19 @@
+.products-page {
+    @media screen and (max-width: 400px) {
+        align-items: center;
+        justify-content: center;
+
+        .field-checkbox {
+            display: none;
+        }
+
+        #cat {
+            display: none;
+        }
+
+        #pr {
+            margin: -50px;
+            padding-right: 50px;
+        }
+    }
+}

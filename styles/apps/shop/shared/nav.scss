@@ -1,9 +1,13 @@
 .nav {
+    @media screen and (max-width: 400px) {
+        display: none;
+    }
     button {
         background-color: white;
         list-style: none;
         display: inline-block;
-        margin-left: 5px;
+        padding-left: 10px;
+        margin-left: 3px;
         color: #2264d1;
         border: 1px solid;
         border-color: #9dc2ff;

@@ -1,12 +1,40 @@
+$small: 400px;
+$medium: 900px;
+
 .banner {
+    @media screen and (max-width: $small) {
+        height: 180px;
+        width: 380px;
+
+        #myimage {
+            width: 100px;
+            padding-top: 15px;
+        }
+        #h2text {
+            padding-bottom: 120px;
+            color: white;
+            h2 {
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            h1 {
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+        &-button {
+        }
+    }
+
     height: 280px;
     width: 100%;
-    background-color: #9DC2FF;
+    background-color: #9dc2ff;
     border-radius: 15px;
 
     &-text {
         color: white;
-        margin-top: 70px;
+        margin-top: 38px;
 
         h2 {
             margin: 0;

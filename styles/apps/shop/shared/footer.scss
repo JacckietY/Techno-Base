@@ -1,4 +1,6 @@
 footer {
+    @media screen and (max-width: 400px) {
+    }
     background-color: $secondary-color;
     min-height: 50px;
     padding: 10px 25px;

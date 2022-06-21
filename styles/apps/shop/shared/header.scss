@@ -1,4 +1,9 @@
 header {
+    @media screen and (max-width: 400px) {
+        .pi-shopping-cart {
+            right: 30px;
+        }
+    }
     margin-bottom: 30px;
     .logo {
         margin-left: 20px;
